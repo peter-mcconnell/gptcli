@@ -16,8 +16,14 @@ openai.api_key = args.api_key
 
 # Create a speech engine for text-to-speech
 engine = pyttsx3.init()
+# voices = engine.getProperty('voices')
+# for voice in voices:
+#     print(voice)
+engine.setProperty('voice', 'en-scottish')
 
 # create a microphone instance
+# note: you will need to change device_index to whatever mic your machine is using
+#       use sr.Microphone().get_working_microphones() to list the available options
 mic = sr.Microphone(device_index=13)
 
 # Listen for audio input
